@@ -4,7 +4,7 @@
 		<%= link_to p.name ,post_path(p)%>
 		<%= p.created_at %>
 		<%= link_to 'edit',edit_post_path(p) %>
-		<%= link_to 'delete',post_path(p),:method=>:delste %>
+		<%= link_to 'delete',post_path(p),:method=>:delete %>
 	</li>
 	<% end %>
 </ul>
