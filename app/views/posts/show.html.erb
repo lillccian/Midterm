@@ -14,7 +14,7 @@
 	<li>
 	<h4><%= c.name %></h4>
 	<%= c.description %>
-	<% if current_user == @post.user %>
+	<% if current_user == c.user %>
 	<%= link_to"edit",edit_post_comment_path(@post,c) %>
 	<%= link_to"delete",post_comment_path(@post,c),:method=>:delete %>
 	<% end %>
