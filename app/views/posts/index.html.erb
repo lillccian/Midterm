@@ -8,6 +8,7 @@
 		<%= link_to 'delete',post_path(p,:id=>p.id),:method=>:delete %>
 		<% end %>
 		<%= link_to "comments",post_comments_path(p) %>
+		<%= p.category_id %>
 	</li>
 	<% end %>
 </ul>
