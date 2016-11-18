@@ -1,21 +1,26 @@
+<h1>Post show</h1>
 <ul>
-	
-<li><%= @post.name %></li>
-<li><%= @post.description %></li>
-
+	<h3>Title</h3>	
+	<li><%= @post.name %></li>
+	<h3>Category</h3>
+	<li><%= Category.find(@post.category_id).name %></li>
+	<h3>Description</h3>
+	<li><%= @post.description %></li>
 </ul>
 
-
 <h1>comment</h1>
-
+<ul>
 <% @comments.each do |c| %>
-<%= c.name %>
-<%= c.description %>
-<%= link_to"show",post_comment_path(@post,c) %>
-<%= link_to"edit",edit_post_comment_path(@post,c) %>
-<%= link_to"delete",post_comment_path(@post,c),:method=>:delete %>
-
+	<li>
+	<%= c.name %>
+	<%= c.description %>
+	<% if current_user == @post.user %>
+	<%= link_to"edit",edit_post_comment_path(@post,c) %>
+	<%= link_to"delete",post_comment_path(@post,c),:method=>:delete %>
+	<% end %>
+	</li>
 <% end %>
+</ul>
 <%= link_to "new comment", new_post_comment_path(@post) %>
 <%= link_to	"back" ,posts_path %>
 

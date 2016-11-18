@@ -1,3 +1,4 @@
+<h1>SOS POST</h1>
 <ul>
 	<% @posts.each do |p| %>
 	<li>
@@ -7,8 +8,6 @@
 		<%= link_to 'edit',edit_post_path(p,:id=>p.id) %>
 		<%= link_to 'delete',post_path(p,:id=>p.id),:method=>:delete %>
 		<% end %>
-		<%= link_to "comments",post_comments_path(p) %>
-		<%= p.category_id %>
 	</li>
 	<% end %>
 </ul>
