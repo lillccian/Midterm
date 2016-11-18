@@ -12,7 +12,7 @@
 <ul>
 <% @comments.each do |c| %>
 	<li>
-	<%= c.name %>
+	<h4><%= c.name %></h4>
 	<%= c.description %>
 	<% if current_user == @post.user %>
 	<%= link_to"edit",edit_post_comment_path(@post,c) %>
