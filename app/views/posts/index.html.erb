@@ -1,4 +1,11 @@
-<% @posts.each do |p| %>
-<%= p.name %>
-<%= p.description %>
-<% end %>
+<ul>
+	<% @posts.each do |p| %>
+	<li>
+		<%= p.name %>
+		<%= link_to 'edit',edit_post_path(p) %>
+		<%= link_to 'delete',post_path(p),:method=>:delste %>
+	</li>
+	<% end %>
+</ul>
+
+<%= link_to'new post',new_post_path %>
