@@ -4,11 +4,12 @@
 <li><%= @post.description %></li>
 
 </ul>
-<%= link_to"back",posts_path %>
+
 
 <h1>comment</h1>
 
 <h1>comment index</h1>
+
 <% @comments.each do |c| %>
 <%= c.name %>
 <%= c.description %>
@@ -18,5 +19,5 @@
 
 <% end %>
 <%= link_to "new comment", new_post_comment_path(@post) %>
-<%= link_to	"back" ,posts_path%>
+<%= link_to	"back" ,posts_path %>
 

@@ -17,6 +17,18 @@ class CommentsController < ApplicationController
 			render :action =>:edit
 		end
 	end
+  def new
+  	@comment = @post.comments.new
+  end
+	def create 
+		@comment = @post.comments.new(comment_params)
+		@comment.user = current_user
+		if @comment.save
+			redirect_to post_path(@post)
+		else
+			render :action => :new
+		end
+	end
 
 	private 
 	def find_post
