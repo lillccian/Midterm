@@ -1,6 +1,8 @@
+<h1>comment index</h1>
 <% @comments.each do |c| %>
 <%= c.name %>
 <%= c.description %>
+<%= link_to"show",post_comment_path(@post,c) %>
 <%= link_to"edit",edit_post_comment_path(@post,c) %>
 <%= link_to"delete",post_comment_path(@post,c),:method=>:delete %>
 
