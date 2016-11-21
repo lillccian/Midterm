@@ -1,9 +1,6 @@
-<%= form_for @post,:url=>post_path(@post),:method=>:patch do|p| %>
-
-	<%= p.label :name,'Name' %>
-	<%= p.text_field :name %>
-	<%= p.label :description,'description' %>
-	<%= p.text_area :description %>
-	<%= p.submit %>
-	<%= link_to"back",posts_path %>
+<%= form_for @post, :url => post_path(@post), :method => :patch do |p| %>
+    <%= render :partial => "form", :locals => { :p => p } %>
 <% end %>
+
+
+<%= link_to "back", posts_path %>

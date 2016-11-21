@@ -1,9 +1,5 @@
-<%= form_for @post,:url=>posts_path do|p| %>
-	<%= p.collection_select(:category_id, Category.all, :id, :name) %>
-	<%= p.label :name,'Name' %>
-	<%= p.text_field :name %>
-	<%= p.label :description,'description' %>
-	<%= p.text_area :description %>
-	<%= p.submit %>
-	<%= link_to"back",posts_path %>
+<%= form_for @post, :url => posts_path do |p| %>
+    <%= render :partial => "form", :locals => { :p => p } %>
 <% end %>
+
+<%= link_to "back", posts_path %>
